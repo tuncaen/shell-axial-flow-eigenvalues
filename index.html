@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shell in axial flow: eigenvalue pages</title>
+<style>
+  :root { --ink: #1d1e1a; --muted: #6b6e66; --rule: #d9dbd3; --bg: #ffffff; --link: #1f4e9c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink: #e8e9e3; --muted: #a0a39b; --rule: #3a3c36; --bg: #16171a; --link: #8ab4ff; } }
+  :root[data-theme="dark"] { --ink: #e8e9e3; --muted: #a0a39b; --rule: #3a3c36; --bg: #16171a; --link: #8ab4ff; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0 24px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  p { margin: 0 0 12px; }
+  .note { color: var(--muted); font-size: 0.92rem; }
+  .top { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; margin: 0 0 4px; }
+  .top h1 { margin: 0; }
+  .themesw { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .themesw button { font: inherit; font-size: 0.8rem; border: 0; padding: 2px 9px; background: var(--bg); color: var(--muted); cursor: pointer; }
+  .themesw button + button { border-left: 1px solid var(--rule); }
+  .themesw button[aria-pressed="true"] { background: var(--link); color: var(--bg); }
+</style>
+<script>try { var th0 = localStorage.getItem("companion-theme"); if (th0 === "light" || th0 === "dark") document.documentElement.setAttribute("data-theme", th0); } catch (e) { }</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>Eigenvalues of a cylindrical shell conveying axial flow</h1>
+    <span class="themesw" role="group" aria-label="theme"><button data-th="system" title="follow the system's theme">Auto</button><button data-th="light">Light</button><button data-th="dark">Dark</button></span>
+  </div>
+  <p class="sub">The interactive companion of <i>An Isogeometric Approach to the Flow-Induced Vibration of Cylindrical Shells Conveying Internal Axial Flow</i> (Tunca &amp; Uğurlu).</p>
+  <p>Each page draws the eigenvalues of one family of modes, the modes of one circumferential wavenumber <i>n</i>, against the flow velocity, as in the diagrams of the paper. A slider moves over the 328 velocity stations. At each station, every mode has a window with the axial profile of its radial displacement over one period and its axial composition. The <i>3D</i> button of a window draws its mode on the shell, moving through one period. The paper shows the family <i>n</i> = 5; the pages show <i>n</i> = 4 to 7 on both far fields.</p>
+  <table>
+    <tr><th>Far field and realization</th><th><i>n</i> = 4</th><th><i>n</i> = 5</th><th><i>n</i> = 6</th><th><i>n</i> = 7</th></tr>
+    <tr><td>Rigidly extended shell (finite extension)</td>
+      <td><a href="pages/rigid_fin_PC00_n4.html">open</a></td><td><a href="pages/rigid_fin_PC00_n5.html">open</a></td><td><a href="pages/rigid_fin_PC00_n6.html">open</a></td><td><a href="pages/rigid_fin_PC00_n7.html">open</a></td></tr>
+    <tr><td>Periodically supported shell (single span with the symmetry closure)</td>
+      <td><a href="pages/periodic_PC00_n4.html">open</a></td><td><a href="pages/periodic_PC00_n5.html">open</a></td><td><a href="pages/periodic_PC00_n6.html">open</a></td><td><a href="pages/periodic_PC00_n7.html">open</a></td></tr>
+    <tr><td>Rigidly extended shell (mapped patch)</td>
+      <td></td><td><a href="pages/rigid_inf_PC00_n5.html">open</a></td><td></td><td></td></tr>
+  </table>
+  <p class="note">Each page is a single file of about 2.4 MB and needs no server. The <a href="README.md">README</a> describes the per-station records (<code>data/</code>), the method and the provenance. License: CC BY 4.0.</p>
+</div>
+<script>
+(function () {
+  var root = document.documentElement, btns = Array.prototype.slice.call(document.querySelectorAll(".themesw button"));
+  function sync() { var th = root.getAttribute("data-theme") || "system"; btns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-th") === th)); }); }
+  btns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var th = b.getAttribute("data-th");
+      if (th === "system") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", th);
+      try { localStorage.setItem("companion-theme", th); } catch (e) { }
+      sync();
+    });
+  });
+  sync();
+})();
+</script>
+</body>
+</html>

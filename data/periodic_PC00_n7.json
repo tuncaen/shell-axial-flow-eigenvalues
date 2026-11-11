@@ -1,0 +1,53 @@
+{
+ "far_field": "the periodically supported shell",
+ "realization": "the single span with the symmetry closure",
+ "cross_section": "PC00",
+ "n": 7,
+ "velocity_stations": 328,
+ "axial_wavenumbers": 10,
+ "axial_samples": 81,
+ "modes": {
+  "mode0": {
+   "name_at_rest": [
+    1,
+    7
+   ],
+   "stations": 328
+  },
+  "mode1": {
+   "name_at_rest": [
+    2,
+    7
+   ],
+   "stations": 328
+  },
+  "mode2": {
+   "name_at_rest": [
+    3,
+    7
+   ],
+   "stations": 328
+  },
+  "mode3": {
+   "name_at_rest": [
+    4,
+    7
+   ],
+   "stations": 328
+  },
+  "mode4": {
+   "name_at_rest": [
+    5,
+    7
+   ],
+   "stations": 328
+  },
+  "mode5": {
+   "name_at_rest": [
+    6,
+    7
+   ],
+   "stations": 328
+  }
+ }
+}

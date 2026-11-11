@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use these data or pages, please cite the paper and this repository."
+title: "Eigenvalues of a cylindrical shell conveying axial flow: the interactive companion"
+type: dataset
+authors:
+  - family-names: Tunca
+    given-names: Enes
+  - family-names: Uğurlu
+    given-names: Bahadır
+license: CC-BY-4.0
+doi: 10.5281/zenodo.23970033
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23970033
+    description: "The Zenodo record of the released version"
+repository-code: "https://github.com/tuncaen/shell-axial-flow-eigenvalues"
+url: "https://tuncaen.github.io/shell-axial-flow-eigenvalues/"
+preferred-citation:
+  type: article
+  title: "An Isogeometric Approach to the Flow-Induced Vibration of Cylindrical Shells Conveying Internal Axial Flow"
+  authors:
+    - family-names: Tunca
+      given-names: Enes
+    - family-names: Uğurlu
+      given-names: Bahadır
+  journal: "to be completed on publication"
+  year: 2026
